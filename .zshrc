@@ -88,7 +88,7 @@ case ${UID} in
 
     function _update_vcs_info_msg() {
         psvar=()
-        LANG=en_US.UTF-8 vcs_info
+        #LANG=en_US.UTF-8 vcs_info
         psvar[2]=$(_git_not_pushed)
         [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
     }
@@ -127,6 +127,11 @@ case ${UID} in
 
 	  gitdir=`git rev-parse --git-dir 2> /dev/null`
 	  action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
+
+      if [[ -e "$gitdir/rprompt-nostatus" ]]; then
+		  echo "$name$action "
+		  return
+      fi
 
 	  st=`git status 2> /dev/null`
 	  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
