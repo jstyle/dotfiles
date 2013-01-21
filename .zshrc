@@ -146,7 +146,7 @@ case ${UID} in
 	  echo "$color$name$action%f%b "
 	}
 
-    RPROMPT='`rprompt-git-current-branch`${RESET}${WHITE}[${BLUE}%(5~,%-2~/.../%2~,%~)${WHITE}]${RESET}'
+    RPROMPT='`rprompt-git-current-branch`${RESET}${WHITE}[${CYAN}%(5~,%-2~/.../%2~,%~)${WHITE}]${RESET}'
 
     ;;
 esac
