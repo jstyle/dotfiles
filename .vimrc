@@ -392,6 +392,7 @@ NeoBundleLazy "Shougo/vimfiler", {
   \   "mappings": ['<Plug>(vimfiler_switch)'],
   \   "explorer": 1,
   \ }}
+let g:vimfiler_ignore_pattern = '\%(\.pyc\|\.git\|\.bzr\|\.svn\|\.settings\)$'
 
 " '<Plug>TaskList'というマッピングが呼ばれるまでロードしない
 NeoBundleLazy 'vim-scripts/TaskList.vim', {"autoload": {"mappings": ['<Plug>TaskList']}}
@@ -582,7 +583,8 @@ function! s:hooks.on_source(bundle)
   " quickrunと被るため大文字に変更
   let g:jedi#rename_command = '<Leader>R'
   " gundoと被るため大文字に変更 (2013-06-24 10:00 追記)
-  let g:jedi#goto_command = '<Leader>G'
+  "let g:jedi#goto_command = '<Leader>G'
+  let g:jedi#goto_assignments_command = '<Leader>G'
 endfunction
 
 "--------------------------------------------------------------------------
