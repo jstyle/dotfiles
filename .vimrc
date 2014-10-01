@@ -392,7 +392,6 @@ NeoBundleLazy "Shougo/vimfiler", {
   \   "mappings": ['<Plug>(vimfiler_switch)'],
   \   "explorer": 1,
   \ }}
-let g:vimfiler_ignore_pattern = '\%(\.pyc\|\.git\|\.bzr\|\.svn\|\.settings\)$'
 
 " '<Plug>TaskList'というマッピングが呼ばれるまでロードしない
 NeoBundleLazy 'vim-scripts/TaskList.vim', {"autoload": {"mappings": ['<Plug>TaskList']}}
@@ -465,6 +464,9 @@ let s:hooks = neobundle#get_hooks("vimfiler")
 function! s:hooks.on_source(bundle)
   let g:vimfiler_as_default_explorer = 1
   let g:vimfiler_enable_auto_cd = 1
+  let g:vimfiler_ignore_pattern = '\%(\.pyc\|\.git\|\.bzr\|\.svn\|\.settings\)$'
+  " Edit file by tabedit.
+  let g:vimfiler_edit_action = 'tabopen'
   " vimfiler specific key mappings
   autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
   function! s:vimfiler_settings()
