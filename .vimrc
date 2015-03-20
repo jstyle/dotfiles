@@ -339,7 +339,12 @@ let s:neobundle_root = expand('~/.vim/bundle/neobundle.vim')
 if has('vim_starting')
   execute "set runtimepath+=" . s:neobundle_root
 endif
-call neobundle#rc(s:bundle_root)
+"call neobundle#rc(s:bundle_root)
+call neobundle#begin(s:bundle_root)
+NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
+
+
 " NeoBundle自身をNeoBundleで管理させる
 NeoBundleFetch 'Shougo/neobundle.vim'
 
