@@ -27,10 +27,10 @@ set nocompatible
 " ファイル名と内容によってファイルタイプを判別し、ファイルタイププラグインを有効にする
 filetype indent plugin on
 
-let g:molokai_original = 1
-:colorscheme molokai
+"let g:molokai_original = 1
+":colorscheme molokai
 " set t_Co = 256
-syntax on
+"syntax on
 
 "------------------------------------------------------------
 " Must have options {{{1
@@ -339,11 +339,8 @@ let s:neobundle_root = expand('~/.vim/bundle/neobundle.vim')
 if has('vim_starting')
   execute "set runtimepath+=" . s:neobundle_root
 endif
-"call neobundle#rc(s:bundle_root)
 call neobundle#begin(s:bundle_root)
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
-
 
 " NeoBundle自身をNeoBundleで管理させる
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -376,6 +373,7 @@ NeoBundle 'vim-scripts/YankRing.vim'
 "NeoBundle 'davidhalter/jedi-vim'
 "NeoBundle 'sjl/gundo.vim'
 "NeoBundle 'vim-pandoc/vim-pandoc'
+NeoBundle 'tomasr/molokai'
 
 
 " インストールされていないプラグインのチェックおよびダウンロード
@@ -546,7 +544,7 @@ NeoBundle "nathanaelkane/vim-indent-guides"
 let s:hooks = neobundle#get_hooks("vim-indent-guides")
 function! s:hooks.on_source(bundle)
   let g:indent_guides_guide_size = 1
-  IndentGuidesEnable " 2013-06-24 10:00 追記
+  "IndentGuidesEnable " 2013-06-24 10:00 追記
 endfunction
 
 
@@ -601,10 +599,9 @@ NeoBundleLazy "vim-pandoc/vim-pandoc", {
       \   "filetypes": ["text", "pandoc", "markdown", "rst", "textile"],
       \ }}
 
+call neobundle#end()
 
-
-
-
-
-
+syntax on
+colorscheme molokai
+set t_Co=256
 
