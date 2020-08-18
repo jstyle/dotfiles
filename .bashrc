@@ -13,8 +13,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=50000
-HISTFILESIZE=100000
+export HISTSIZE=50000
+export HISTFILESIZE=100000
 HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S '
 
 # check the window size after each command and, if necessary,
@@ -113,3 +113,4 @@ if [ -f ~/.bashrc_local ]; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.gem/ruby/2.2.0/bin:$PATH"
