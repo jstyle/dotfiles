@@ -13,3 +13,5 @@ case $dotfile in
             ;;
     esac
 done
+
+ln -Fis $PWD/.oh-my-zsh/dotfiles $HOME/.oh-my-zsh/custom
