@@ -6,7 +6,7 @@ case $dotfile in
             continue;;
         ..)
             continue;;
-        .git)
+        .git*)
             continue;;
         *)
             ln -Fis "$PWD/$dotfile" $HOME
