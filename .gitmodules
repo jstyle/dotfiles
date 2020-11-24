@@ -1,0 +1,6 @@
+[submodule ".oh-my-zsh/dotfiles/plugins/git-flow-completion"]
+	path = .oh-my-zsh/dotfiles/plugins/git-flow-completion
+	url = https://github.com/bobthecow/git-flow-completion
+[submodule ".oh-my-zsh/dotfiles/plugins/zsh-completions"]
+	path = .oh-my-zsh/dotfiles/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions

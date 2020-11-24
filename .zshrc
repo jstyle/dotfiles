@@ -54,6 +54,7 @@ ZSH_CUSTOM="$ZSH/custom/dotfiles"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
+plugins=(zsh-completions git-flow-completion)
 
 source $ZSH/oh-my-zsh.sh
 
